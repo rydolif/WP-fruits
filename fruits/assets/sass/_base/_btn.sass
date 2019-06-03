@@ -1,0 +1,119 @@
+.btn
+	position: relative
+	display: inline-block
+	width: 210px
+	height: 60px
+	border: none
+	outline: none
+	border-radius: 4px
+	background: transparent
+	font-family: $title
+	text-align: center
+	font-size: 24px
+	line-height: 1
+	color: $green
+	line-height: 60px
+	letter-spacing: .2px
+	background-image: url(../img/btn.png)
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: center
+	transition: all .3s
+	
+	&:hover,
+	&:focus
+		outline: none
+		border: none
+		text-decoration: none
+		cursor: pointer
+		color: #fff
+		background-image: url(../img/btn--active.png)
+
+	&--shop
+		width: 135px
+		background-image: url(../img/btn--more.png)
+		color: #ff9c13
+
+		&:hover,
+		&:focus
+			background-image: url(../img/btn--more--active.png)
+
+	&--hero
+		position: relative
+		display: inline-block
+		width: 257px
+		height: 85px
+		border: none
+		outline: none
+		border-radius: 4px
+		background: transparent
+		font-family: $title
+		text-align: center
+		font-size: 24px
+		line-height: 1
+		color: #fff
+		line-height: 40px
+		letter-spacing: .2px
+		padding-top: 13px
+		background-image: url(../img/hero__btn.png)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center
+
+		&:hover,
+		&:focus
+			outline: none
+			border: none
+			text-decoration: none
+			cursor: pointer
+			transition: all .3s
+			color: #fff
+			background-image: url(../img/hero__btn--active.png)
+
+	
+	&--packing
+		width: 270px
+		height: 65px
+		background-image: none
+		border: 5px solid transparent
+		border-image: url(../img/btn--packing--active.png)
+		border-image-slice: 20
+		border-image-repeat: round
+		border-image-width: 18px
+		transition: all .0s
+
+		&:hover,
+		&:focus
+			border: 5px solid transparent
+			border-image: url(../img/btn--packing.png)
+			border-image-slice: 33
+			border-image-repeat: round
+			border-image-width: 33px
+
+.button
+	width: 47%
+	position: relative
+	display: inline-block
+	height: 40px
+	border: none
+	outline: none
+	border-radius: 40px
+	background: transparent
+	font-family: $title
+	text-align: center
+	font-size: 18px
+	line-height: 1
+	color: $green
+	line-height: 40px
+	letter-spacing: .2px
+	transition: all .3s
+	border: 1px solid $green
+
+	&:hover,
+	&:focus
+		background-color: $green
+		outline: none
+		border: 1px solid $green
+		text-decoration: none
+		cursor: pointer
+		color: #fff
