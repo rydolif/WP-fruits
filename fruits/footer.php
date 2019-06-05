@@ -3,27 +3,33 @@
 		<div class="footer__container container">
 
 			<div class="footer__col">
-				<a href="#" class="footer__logo">
-					<img src="img/logo-footer.png" alt="">
+				<a href="<?php echo get_home_url(); ?>" class="footer__logo">
+					<img src="<?php the_field('footer-logo', 'option'); ?>" alt="logo">
 				</a>
-				<p>© 2019, Все права защищены</p>
+				<p><?php the_field('copyright', 'option'); ?></p>
 			</div>
 
 			<div class="footer__col">
 				<div class="footer__info header__info">
 					<a href="mailto:info@fruitymall.ru">
-						<img src="img/mail.png" alt="">
-						<span>info@fruitymall.ru</span>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/mail.png" alt="">
+						<span><?php the_field('mail', 'option'); ?></span>
 					</a>
 					<a href="tel:+1234567890">
-						<img src="img/phone.png" alt="">
-						<span>+1234567890</span>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/phone.png" alt="">
+						<span><?php the_field('phone', 'option'); ?></span>
 					</a>
 				</div>
 				<div class="footer__soc header__soc">
-					<a href="#" target="_blank"><img src="img/fb.png" alt=""></a>
-					<a href="#" target="_blank"><img src="img/in.png" alt=""></a>
-					<a href="#" target="_blank"><img src="img/vk.png" alt=""></a>
+					<a href="<?php the_field('facebook', 'option'); ?>" target="_blank">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fb.png" alt="">
+					</a>
+					<a href="<?php the_field('instagram', 'option'); ?>" target="_blank">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/in.png" alt="">
+					</a>
+					<a href="<?php the_field('vkontakte', 'option'); ?>" target="_blank">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/vk.png" alt="">
+					</a>
 				</div>
 			</div>
 
