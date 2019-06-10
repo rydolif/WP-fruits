@@ -135,6 +135,18 @@ require get_template_directory() . '/includes/acf.php';
 
 
 /**
+ * currency - валюта
+ */
+require get_template_directory() . '/includes/currency.php';
+
+
+/**
+ * filter - фильтр каталога
+ */
+require get_template_directory() . '/includes/filter.php';
+
+
+/**
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
@@ -146,17 +158,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/woocommerce/includes/wc-function-checkout.php';
 }
 
-//------------------виджеты----------------------
-  function wpb_widgets_init() {
-   
-   register_sidebar( array(
-   'name'          => 'Фильтр',
-   'id'            => 'custom-header-widget',
-   'before_widget' => '<div class="chw-widget">',
-   'after_widget'  => '</div>',
-   'before_title'  => '<h2 class="chw-title">',
-   'after_title'   => '</h2>',
-   ) );
-   
-  }
-  add_action( 'widgets_init', 'wpb_widgets_init' );
+/**
+ * mini-cart
+ */
+require get_template_directory() . '/includes/cart.php';
+

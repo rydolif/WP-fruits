@@ -99,12 +99,9 @@
 					<a href="#">ivanovivan@mail.ru</a>
 				</div>
 
-				<a href="#" class="navigation__info_basket">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/basket.png" alt="">
-					<span>13</span>
-				</a>
 
-				<p class="navigation__info_place">5000 руб.</p>
+				<?php cart_link(); ?><?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+
 			</div>
 
 		</div>

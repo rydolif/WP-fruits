@@ -18,7 +18,7 @@ get_header();
 							<div class="offset-lg-6 col-lg-6 offset-md-3 col-md-9">
 								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="" class="hero__item_logo">
 								<p class="hero__item_sub-logo">Зарядись витаминами!</p>
-								<a href="#" class="btn--hero hero__item_btn">В магазин!</a>
+								<a href="<?php echo get_home_url(); ?>/shop/" class="btn--hero hero__item_btn">В магазин!</a>
 							</div>
 						</div>
 					</div>
@@ -30,7 +30,7 @@ get_header();
 							<div class="col-lg-10">
 								<h1><span>От</span> <b>6 000</b> <span>рублей</span> - </h1>
 								<p class="hero__item_action"><span>БЕСПЛАТНО!!! *</span></p>
-								<a href="#" class="btn--hero hero__item_btn">В магазин!</a>
+								<a href="<?php echo get_home_url(); ?>/shop/" class="btn--hero hero__item_btn">В магазин!</a>
 								<p class="hero__item_big-text">*Доскавка заказов на сумму от <span><b>6000</b> рублей</span> бесплатна</p>
 								<p class="hero__item_min-text"> (в пределах МКАД, за пределами МКАД - 25 руб. за км)</p>
 							</div>
@@ -45,7 +45,7 @@ get_header();
 								<div class="hero__item_content">
 									<h1>Закажи на сумму более <span>5000 рублей</span> и выбери один фрукт</h1>
 									<p class="hero__item_action">в <span>подарок</span></p>
-									<a href="#" class="btn--hero hero__item_btn">В магазин!</a>
+									<a href="<?php echo get_home_url(); ?>/shop/" class="btn--hero hero__item_btn">В магазин!</a>
 									<p class="hero__item_text">выбери: <br>манго, маракуйю, мангостин, лонган, <br>черимойю, рамбутан, карамболу или гуаву</p>
 								</div>
 							</div>
@@ -56,13 +56,13 @@ get_header();
 			</div>
 			<div class="hero__pagination swiper-pagination"></div>
 		</section>
-
+<!-- 
 		<section class="section-btn--top section-btn">
 			<div class="section-btn__container container">
 				<a href="#" class="btn">Рекомендуем</a>
 				<a href="#" class="btn">Популярное</a>
 			</div>
-		</section>
+		</section> -->
 
  		<section class="shop" id="app">
 			<div class="container">
@@ -75,7 +75,7 @@ get_header();
 				<?php endif; ?>
 
 				<div class="shop__btn">
-					<a href="#" class="btn btn--shop btn--packing">Больше</a>
+					<a href="<?php echo get_home_url(); ?>/shop/" class="btn btn--shop btn--packing">Больше</a>
 				</div>
 
 			</div>
