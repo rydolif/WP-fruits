@@ -3,8 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-
-
 //---------------------------------------------wrapper-----------------------------------------------
 
 	add_action( 'woocommerce_before_main_content', 'new_before_main_content',  10 );

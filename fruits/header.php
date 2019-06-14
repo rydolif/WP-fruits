@@ -35,7 +35,6 @@
 					?>
 				</nav>
 			</div>
-
 	
 			<div class="header__col">
 
@@ -68,6 +67,10 @@
 					</span>
 				</button>
 
+				<div class="header__cart">
+					<?php cart_link(); ?><?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+				</div>
+
 			</div>
 
 		</div>
@@ -90,13 +93,29 @@
 					    'theme_location'=>'menu',
 					) );
 				?>
+
+				<div class="navigation__info_login">
+					<?php 
+						wp_nav_menu( array(
+							'menu'=>'login',
+							'menu_class'=>'login',
+						    'theme_location'=>'menu',
+						) );
+					?>
+				</div>
 			</nav>
 
 			<div class="navigation__info">
 
 				<div class="navigation__info_login">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/login.png" alt="">
-					<a href="#">ivanovivan@mail.ru</a>
+					<?php 
+						wp_nav_menu( array(
+							'menu'=>'login',
+							'menu_class'=>'login',
+						    'theme_location'=>'menu',
+						) );
+					?>
 				</div>
 
 

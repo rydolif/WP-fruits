@@ -10,8 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
         $defaults = array(
             'range'           => 4,
             'custom_query'    => FALSE,
-            'previous_string' => __( '<', 'text-domain' ),
-            'next_string'     => __( '>', 'text-domain' ),
+            'previous_string' => __( '←', 'text-domain' ),
+            'next_string'     => __( '→', 'text-domain' ),
             'before_output'   => '<nav class="navigation pagination">',
             'after_output'    => '</nav>'
         );

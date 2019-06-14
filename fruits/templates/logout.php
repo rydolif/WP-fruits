@@ -1,12 +1,11 @@
 <?php
 	/**
-		* Template name: cart
+		* Template name: logout
 	*/
 
 get_header();
 
 ?>
-
 
 	<main class="main">
 
@@ -21,11 +20,14 @@ get_header();
 				<?php endwhile; ?>
 				<?php endif; ?>
 
+				<a href="<?php echo get_home_url(); ?>">Главная</a>
+
 
 			</div>
 		</section>
 
 	</main>
+
 
 <?php
 get_footer();

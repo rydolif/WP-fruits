@@ -21,39 +21,59 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+	<main class="main">
 
-			<?php wc_get_template_part( 'content', 'single-product' ); ?>
+		<section class="packing">
+			<div class="container">
+				<div class="row justify-content-center">
 
-		<?php endwhile; // end of the loop. ?>
+					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	<?php
-		/**
-		 * woocommerce_after_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
 
-	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
+						<div class="col-md-6">
+							<h2><?php the_title(); ?></h2>
+							<?php the_content();
+
+
+								echo wc_get_stock_html( $product ); // WPCS: XSS ok.
+
+								if ( $product->is_in_stock() ) : ?>
+
+									<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
+
+									<form class="cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
+										<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
+
+										<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="btn btn--shop btn--packing single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+
+										<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
+									</form>
+
+									<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
+
+								<?php endif; ?>
+
+						</div>
+
+						<div class="col-md-6">
+							<?php if ( has_post_thumbnail() ) {
+								the_post_thumbnail();
+							} else { ?>
+								<img src="<?php echo get_template_directory_uri(); ?>/img/no.jpg" alt="<?php the_title(); ?>" />
+							<?php } ?>
+						</div>
+
+					<?php endwhile; ?>
+					<?php endif; ?>
+
+
+				</div>
+			</div>
+		</section>
+
+	</main>
+
 
 <?php get_footer( 'shop' );
 

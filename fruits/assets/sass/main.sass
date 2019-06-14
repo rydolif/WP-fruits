@@ -46,6 +46,9 @@
 	a
 		color: $text
 
+	&__cart
+		display: none
+
 	&--active
 		top: -100px
 
@@ -183,6 +186,9 @@
 		@extend .list
 
 	&__nav
+		.navigation__info_login
+			display: none
+
 		ul
 			display: flex
 			justify-content: space-between
@@ -249,6 +255,7 @@
 
 			&::after
 				content: ''
+				top: 0
 				background-image: url(../img/action.png)
 				background-size: contain
 				background-position: center
@@ -283,6 +290,13 @@
 				position: absolute
 				bottom: 0
 				left: 0
+
+			li
+				margin-bottom: 5px
+
+				&:last-child
+					margin-bottom: 0
+
 			a
 				@extend .link
 				color: $green
@@ -299,12 +313,12 @@
 		&_cart
 			position: relative
 			display: inline-block
-			margin-right: 30px
+			margin-right: 20px
 			color: $green
 
 		&_place
 			color: $green
-
+			margin-right: 15px
 
 		.count
 			position: absolute
@@ -424,14 +438,52 @@
 	&__container
 		display: flex
 		justify-content: center
-	
 
+		.btn
+			margin-right: 10px
 
-	.btn
-		margin-right: 15px
+		ul
+			display: flex
+			justify-content: center
+			flex-wrap: wrap
 
-		&:last-child
-			margin-right: 0
+		li
+			margin-right: 15px
+			margin-bottom: 10px
+
+			&:last-child
+				margin-right: 0
+
+		a
+			position: relative
+			display: inline-block
+			width: 210px
+			height: 60px
+			border: none
+			outline: none
+			border-radius: 4px
+			background: transparent
+			font-family: $title
+			text-align: center
+			font-size: 24px
+			line-height: 1
+			color: $green
+			line-height: 60px
+			letter-spacing: .2px
+			background-image: url(../img/btn.png)
+			background-size: contain
+			background-repeat: no-repeat
+			background-position: center
+			transition: all .3s
+			
+			&:hover,
+			&:focus
+				outline: none
+				border: none
+				text-decoration: none
+				cursor: pointer
+				color: #fff
+				background-image: url(../img/btn--active.png)
 
 
 .shop
@@ -712,6 +764,7 @@
 				text-transform: uppercase
 				font-weight: 400
 
+
 .footer
 	padding: 60px 0 30px
 
@@ -960,40 +1013,43 @@
 
 	img
 		width: 270px
-
-	a
-		position: relative
-		font-size: 24px
-		color: #82ba01
-		padding-right: 25px
-		opacity: 0
-		transition: all .3s
-		text-decoration: underline
-
-		&::before
-			content: ''
-			position: absolute
-			right: 0
-			top: 50%
-			transform: translate(0, -50%)
-			background-image: url(../img/more.png)
-			background-size: cover
-			background-repeat: no-repeat
-			background-position: center
-			width: 15px
-			height: 17px
-			transition: all .3s
-
-		&:hover,
-		&:focus
-			text-decoration: underline
-			&::before
-				right: -10px
+		height: auto
 
 		
 	&__list
 		width: 90%
 		margin: 0 auto
+
+
+		a
+			position: relative
+			font-size: 24px
+			color: #82ba01
+			padding-right: 25px
+			opacity: 0
+			transition: all .3s
+			text-decoration: underline
+
+			&::before
+				content: ''
+				position: absolute
+				right: 0
+				top: 50%
+				transform: translate(0, -50%)
+				background-image: url(../img/more.png)
+				background-size: cover
+				background-repeat: no-repeat
+				background-position: center
+				width: 15px
+				height: 17px
+				transition: all .3s
+
+			&:hover,
+			&:focus
+				text-decoration: underline
+				&::before
+					right: -10px
+
 
 	&__item
 		display: flex
@@ -1002,6 +1058,7 @@
 		transition: all .6s
 		border: 5px solid transparent
 		padding: 20px 50px
+
 
 		&:hover
 			box-shadow: 10px 10px 10px 0 rgba(0,0,0, .2)
@@ -1021,6 +1078,7 @@
 			display: flex
 			flex-direction: column
 			justify-content: space-around
+			width: 70%
 
 		&_info
 			display: flex
@@ -1030,37 +1088,36 @@
 
 .cabinet
 
-	h2, h3
+	h2, h3, legend
 		font-family: $fonts
 		font-weight: 400
 
 	h2
 		text-align: center
 		font-size: 36px
-		margin-bottom: 60px
+		margin-bottom: 40px
 
-	h3
+	h3, legend
 		font-size: 24px
-		margin-bottom: 30px
+		margin-bottom: 20px
 
+	fieldset
+		margin-top: 40px
+
+	
 	&__container
 		border: 1px solid #ebebeb
 		box-shadow: 10px 10px 10px 0 rgba(0,0,0, .2)
 		margin-bottom: 15px
 
 	&__form
-		max-width: 460px
+		max-width: 50%
 		margin: 0 auto
 		padding: 35px 15px 55px
 
 		input
 			padding: 0 20px
 			background: #e4f0c7
-
-		textarea
-			padding: 10px 20px
-			background: #e4f0c7
-			height: 95px
 
 		&_line
 			margin: 30px 0
@@ -1077,40 +1134,6 @@
 				&:focus
 					text-decoration: underline
 
-			label
-				position: relative
-				padding-left: 40px
-				color: $text
-				cursor: pointer
-				margin-bottom: 0
-
-				&::before,
-				&::after
-					content: ''
-					position: absolute
-					left: 0
-
-				&::before
-					width: 20px
-					height: 20px
-					border: 3px solid $text
-
-				&::after
-					width: 8px
-					height: 8px
-					background: $green
-					left: 6px
-					top: 6px
-					transition: all .6s
-
-			input[type="checkbox"]
-				display: none
-
-			input[type="checkbox"]:checked + label::after
-				transform: scale(1)
-
-			input[type="checkbox"] + label::after
-				transform: scale(0)
 
 		&_input
 			margin-bottom: 15px
@@ -1149,6 +1172,15 @@
 	h3
 		font-size: 24px
 
+
+	input
+		padding: 0 20px
+		background: #e4f0c7
+
+	textarea
+		padding: 10px 20px
+		background: #e4f0c7
+		height: 95px
 
 	&__basket
 		border: 1px solid #ebebeb
@@ -1262,15 +1294,20 @@
 			color: $red
 
 
+
+
 	&__registration
 		padding-top: 40px
 		padding-bottom: 60px
+
+
+		ul, p
+			font-size: 18px
 
 		&_text
 			margin-bottom: 40px
 
 			p, ul
-				font-size: 18px
 				margin-bottom: 20px
 
 				span
@@ -1304,6 +1341,103 @@
 
 			.btn
 				width: 220px
+
+
+.page--login
+	padding-top: 70px
+
+	.woocommerce-error
+		margin-bottom: 10px
+
+		li
+			background: $red
+			padding: 5px
+			color: #fff
+			border-radius: 5px
+		
+		a
+			color: $green
+			font-weight: 700
+
+			&:hover,
+			&:focus
+				text-decoration: underline
+
+
+.pagination
+	display: flex
+	justify-content: center
+	text-align: center
+
+	.prev
+		&::before
+			content: '←'
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+	.next
+		&::before
+			content: '→'
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+
+	a, span
+		position: relative
+		display: block
+		border-radius: 15px
+		border: 2px solid $green
+		height: 45px
+		width: 45px
+		line-height: 45px
+		font-size: 22px
+		margin: 0 3px
+
+	span
+		background-color: $green
+		color: #fff
+
+	a
+		transition: all .3s
+		color: $green
+
+		&:hover,
+		&:focus
+			background-color: $green
+			color: #fff
+
+
+.article
+
+	h2
+		font-family: $fonts
+		font-weight: 400
+		text-align: center
+		margin-bottom: 40px
+
+	h2
+		font-size: 36px
+
+	img
+		float: left
+		margin-bottom: 20px
+		margin-right: 20px
+
+	p, ul
+		font-size: 16px
+
+	a
+		color: $green
+
+		&:hover,
+		&:focus
+			text-decoration: underline
+
+	.quantity
+		display: none
+
 
 //----------------------------------------wp--------------------------------------------
 .page
@@ -1465,6 +1599,518 @@ del
 	a
 		@extend .btn
 
+
+.minus,
+.plus
+	display: none
+
+.chosen
+	a
+		&::before
+			display: none !important
+
+.woocommerce-pagination
+	display: flex
+	justify-content: center
+
+	.page-numbers
+		display: flex
+		justify-content: center
+		text-align: center
+
+	a, span
+		position: relative
+		display: block
+		border-radius: 15px
+		border: 2px solid $green
+		height: 45px
+		width: 45px
+		line-height: 45px
+		font-size: 22px
+		margin: 0 3px
+
+	span
+		background-color: $green
+		color: #fff
+
+	a
+		transition: all .3s
+		color: $green
+
+		&:hover,
+		&:focus
+			background-color: $green
+			color: #fff
+
+
+.form-row
+	margin-bottom: 15px
+
+
+.shop_table
+	.product-name
+		// display: flex
+		// justify-content: space-between
+
+		.qty
+			padding: 0 10px
+			text-align: center
+
+	tr:last-child td
+		padding: 20px 10px
+
+
+.woocommerce-checkout-payment
+	.button
+		@extend .btn
+		color: $orange
+		width: 270px
+		height: 65px
+		background-image: none
+		border: 5px solid transparent
+		border-image: url(../img/btn--packing--active.png)
+		border-image-slice: 20
+		border-image-repeat: round
+		border-image-width: 18px
+		transition: all .0s
+
+		&:hover,
+		&:focus
+			border: 5px solid transparent
+			border-image: url(../img/btn--packing.png)
+			border-image-slice: 33
+			border-image-repeat: round
+			border-image-width: 33px
+
+.place-order
+	display: flex
+	flex-wrap: wrap
+
+	.button
+		margin: 0 auto
+
+	a
+		color: $green
+
+		&:hover,
+		&:focus
+			text-decoration: underline
+
+
+#yith-quick-view-modal.open .yith-wcqv-main
+	overflow: visible
+
+	&::before,
+	&::after
+		display: none
+
+#yith-quick-view-close
+	right: -40px
+	top: -40px
+	width: 36px
+	height: 36px
+	border: 4px solid $orange
+	color: transparent !important
+	opacity: 1
+	border-radius: 50%
+	transition: all .3s
+
+	&:hover,
+	&:focus
+		border: 4px solid $red
+
+		&::before,
+		&::after
+			background-color: $red
+
+	&::before,
+	&::after
+		content: ''
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%) rotate(-45deg)
+		background-color: $orange
+		transition: all .3s
+
+	&::before
+		width: 18px
+		height: 4px
+
+	&::after
+		height: 18px
+		width: 4px
+
+.woocommerce-product-gallery__wrapper
+	img
+		width: 100%
+		height: auto
+
+
+#yith-quick-view-modal .yith-wcqv-main
+	box-shadow: none
+
+#yith-quick-view-modal #yith-quick-view-content
+	border: 5px solid transparent
+	border-image: url(../img/modal-border.png)
+	box-shadow: 10px 10px 10px 0 rgba(0,0,0, .2)
+	border-image-slice: 20
+	border-image-repeat: round
+	border-image-width: 15px
+		
+
+.quantity
+	input
+		padding: 0
+
+
+.woocommerce-form-coupon-toggle
+	padding: 25px 0
+	font-size: 18px
+
+	a
+		color: $red
+
+		&:hover,
+		&:focus
+			text-decoration: underline
+
+.woocommerce-form-coupon
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+
+	.form-row-first
+		width: 100%
+		margin-bottom: 15px
+
+	.form-row-last
+		width: 100%
+		display: flex
+		justify-content: center
+		margin-bottom: 25px !important
+
+
+	.button
+		@extend .btn
+
+.woocommerce-form__label
+	position: relative
+	color: $text
+	cursor: pointer
+	margin-bottom: 0
+	width: 100%
+	cursor: pointer
+
+	&::before,
+	&::after
+		content: ''
+		position: absolute
+		left: 0
+
+	&::before
+		width: 20px
+		height: 20px
+		border: 3px solid $text
+
+	&::after
+		width: 8px
+		height: 8px
+		background: $green
+		left: 6px
+		top: 6px
+		transition: all .6s
+		transform: scale(0)
+
+	&--active
+		&::after
+			transform: scale(1)
+
+	input
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		background-color: transparent
+		border: none
+
+	span
+		padding-left: 40px
+		display: block
+
+	abbr
+		display: none
+
+
+.woocommerce-billing-fields__field-wrapper
+	h3
+		text-align: left
+		color: $text
+		font-size: 16px
+
+.woocommerce-thankyou-order-received
+	font-size: 36px !important
+	font-family: $fonts
+	text-align: center
+
+.address
+	font-size: 18px
+
+.woocommerce-mini-cart__empty-message
+	font-size: 16px
+	line-height: 36px
+
+.woocommerce-product-details__short-description
+	font-size: 18px
+
+.onsale
+	display: none
+
+#yith-quick-view-content div.summary
+	height: 100%
+
+.product
+	display: flex
+	align-items: center
+	height: 100%
+	overflow: auto
+
+	.excerpt
+		font-size: 18px
+	
+	h2,
+	p
+		display: inline-block
+
+
+	h2
+		font-size: 30px
+		margin-bottom: 50px
+
+	p
+		font-size: 18px
+	
+	.yith-wcqv-button
+		display: none
+
+	.wrap
+		display: inline-flex
+		align-items: center
+		margin-top: 40px
+
+	.shop__item_form
+		display: inline-flex
+		align-items: center
+		justify-content: flex-end
+		width: 100%
+
+
+.um
+	.um-form
+		.um-field
+			input[type=text],
+			input[type=tel],
+			input[type=number],
+			input[type=password],
+			input
+				height: 55px !important
+				line-height: 55px !important
+				color: #ccc !important
+				font-size: 24px !important
+				padding: 0 20px !important
+				border: 5px solid transparent !important
+				border-image: url(../img/input--border.png) !important
+				box-shadow: 10px 10px 10px 0 rgba(0,0,0, .2) !important
+				border-image-slice: 20 !important
+				border-image-repeat: round !important
+				border-image-width: 15px !important
+				transition: all .6s
+
+				&::placeholder
+					line-height: 55px !important
+					color: #ccc !important
+					font-size: 24px !important
+
+
+.um
+	.um-form
+		input[type=submit].um-button
+			position: relative !important
+			display: inline-block !important
+			width: 280px !important
+			height: 70px !important
+			border: none !important
+			outline: none !important
+			border-radius: 4px !important
+			background: transparent !important
+			font-family: $title
+			text-align: center !important
+			font-size: 24px !important
+			line-height: 1 !important
+			color: $green !important
+			letter-spacing: .2px !important
+			background: transparent !important
+			background-image: url(../img/btn.png) !important
+			background-size: contain !important
+			background-repeat: no-repeat !important
+			background-position: center !important
+			transition: all .3s !important
+			
+			&:hover,
+			&:focus
+				outline: none
+				border: none
+				text-decoration: none
+				cursor: pointer
+				color: #fff !important
+				background: transparent !important
+				background-image: url(../img/btn--active.png) !important
+				background-size: contain !important
+				background-repeat: no-repeat !important
+				background-position: center !important
+
+	.um-right
+		display: none
+
+	.um-left
+		width: 100%
+		text-align: center
+
+.um-field-error
+	background: $red !important
+
+.um-field-arrow
+	i
+		color: $red
+		font-size: 20px
+
+// .woocommerce-form-row
+// 	input
+// 		padding: 0 20px
+// 		background: #e4f0c7
+
+
+.center
+	text-align: center
+
+.woocommerce-FormRow
+	justify-content: center !important
+
+.class
+	position: relative
+	max-width: 575px
+	width: 100%
+	height: auto
+	padding: 50px 65px
+	background-color: #fff
+	z-index: 1
+	border: 5px solid transparent
+	border-image: url(../img/modal-border.png)
+	box-shadow: 10px 10px 10px 0 rgba(0,0,0, .2)
+	border-image-slice: 20
+	border-image-repeat: round
+	border-image-width: 15px
+	margin: 0 auto
+
+
+	h2
+		text-align: center
+		font-size: 36px
+		margin-bottom: 25px
+		color: #696969
+		font-weight: 400
+		font-family: $fonts
+
+	input
+		height: 55px
+		line-height: 55px
+		color: #ccc
+		font-size: 24px
+		padding: 0 20px
+		border: 5px solid transparent
+		border-image: url(../img/input--border.png)
+		box-shadow: 10px 10px 10px 0 rgba(0,0,0, .2)
+		border-image-slice: 20
+		border-image-repeat: round
+		border-image-width: 15px
+
+		&::placeholder
+			line-height: 55px
+			color: #ccc
+			font-size: 24px
+	
+	&__btn
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		margin-bottom: 25px	
+
+	.lost_password
+		a
+			font-size: 24px
+			color: $text
+
+			&:hover,
+			&:focus
+				text-decoration: underline
+
+
+	.form-row
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 25px
+
+		label
+			position: relative
+			font-size: 24px
+			padding-left: 30px
+			line-height: .8
+
+			&::before,
+			&::after
+				content: ''
+				position: absolute
+				left: 0
+
+			&::before
+				width: 20px
+				height: 20px
+				border: 3px solid $text
+
+			&::after
+				width: 8px
+				height: 8px
+				background: $green
+				left: 6px
+				top: 6px
+				transition: all .6s
+				transform: scale(0)
+
+		input[type="checkbox"]
+			display: none
+
+		input[type="checkbox"]:checked + label:after
+			transform: scale(1)
+
+
+.wc-backward
+	color: $green
+
+	&:hover,
+	&:focus
+		color: $green
+		text-decoration: underline
+
+#order_review
+
+	.product-name
+		display: flex
+		justify-content: space-between
+		align-items: center
 
 @import "page"
 @import "media" // Always at the end

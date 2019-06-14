@@ -1,5 +1,9 @@
 $(function() {
 
+  $('.woocommerce-form__label').click(function() {
+    $(this).toggleClass('woocommerce-form__label--active');
+  });
+
 
 //-------------------------------активна ссилка на якій знаходишся для меню---------------------------------------
   $('.nav ul li a').each(function () {

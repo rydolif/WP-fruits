@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	add_action( 'woocommerce_shop_loop_item_title', 'school_shop_loop_item_title', 20 );
 	function school_shop_loop_item_title() {
 		?>
-			<?php  echo '<p>' . the_excerpt() . '</p>'; ?>
+			<?php  echo '<p>' . the_content() . '</p>'; ?>
 		<?php 
 	}
 

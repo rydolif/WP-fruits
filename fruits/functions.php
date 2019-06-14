@@ -146,6 +146,7 @@ require get_template_directory() . '/includes/currency.php';
 require get_template_directory() . '/includes/filter.php';
 
 
+
 /**
  * Load WooCommerce compatibility file.
  */
@@ -163,3 +164,9 @@ if ( class_exists( 'WooCommerce' ) ) {
  */
 require get_template_directory() . '/includes/cart.php';
 
+
+
+/**
+ * Акции 
+ */
+require get_template_directory() . '/includes/post-type.php';

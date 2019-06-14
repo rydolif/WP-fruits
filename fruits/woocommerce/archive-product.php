@@ -29,21 +29,20 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
-<header class="weqwe woocommerce-products-header">
+<header class="section-btn--top section-btn weqwe woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-	<?php endif; ?>
+<!-- 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+ -->	<?php endif; ?>
 
 
 		<?php
 		 
 		if ( is_active_sidebar( 'custom-header-widget' ) ) : ?>
-		    <div id="header-widget-area" class="chw-widget-area widget-area" role="complementary">
+		    <div id="header-widget-area" class="section-btn__container chw-widget-area widget-area" role="complementary">
 		 <?php dynamic_sidebar( 'custom-header-widget' ); ?>
 		    </div>
-		 
+		
 		<?php endif; ?>
-
 	<?php
 	/**
 	 * Hook: woocommerce_archive_description.

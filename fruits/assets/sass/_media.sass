@@ -14,6 +14,22 @@
 
 
 @media only screen and (max-width : 1199px)
+	.woocommerce-mini-cart__empty-message
+		font-size: 14px
+		white-space: nowrap
+
+	.navigation__info_cart
+		img
+			width: 35px
+
+	.navigation__info_login a
+		font-size: 18px
+
+	.navigation__info .count
+		width: 20px
+		height: 20px
+		line-height: 20px
+
 	.order
 		&__basket
 			padding: 0 15px
@@ -36,6 +52,7 @@
 
 		img
 			width: 100%
+			height: auto
 
 		h2
 			margin-bottom: 40px
@@ -74,7 +91,7 @@
 
 		&__nav
 			a
-				font-size: 22px
+				font-size: 20px
 
 				&::after
 					right: -18px
@@ -87,7 +104,7 @@
 						height: 24px
 
 			li
-				margin-right: 25px
+				margin-right: 20px
 
 		&__info
 			font-size: 18px
@@ -101,7 +118,7 @@
 					height: 100%
 
 	.main
-		padding-top: 135px
+		padding-top: 155px
 
 	.hero
 		&__item
@@ -130,6 +147,17 @@
 
 
 @media only screen and (max-width : 992px)
+	.order__basket_img img
+		width: 110px
+
+	.navigation__nav .active
+		color: $text !important
+
+	#yith-quick-view-close
+		right: -20px
+		top: -20px
+		background: #fff
+
 	.order
 		h2,
 		h3
@@ -235,8 +263,27 @@
 			top: 0
 			box-shadow: 0 0 10px 0 rgba(0,0,0, .2)
 
-		&__soc
-			margin-right: 70px
+		&__cart
+			display: block
+			margin-right: 60px
+			margin-left: 15px
+
+			.count
+				position: absolute
+				right: -13px
+				top: 0
+				background: $red
+				width: 20px
+				height: 20px
+				border-radius: 50%
+				color: #fff
+				line-height: 20px
+				text-align: center
+				font-size: 12px
+
+	.widget_shopping_cart_content,
+	.navigation__info_place
+		display: none
 
 
 	.hamburger
@@ -277,41 +324,49 @@
 		&__info
 			display: none
 
-		&__nav_page
-			display: block !important
+		&__nav
+			.navigation__info_login
+				display: block
+				padding: 0
+				margin: 0
 
-			li
 				a
-					position: relative
-					z-index: 1
-					color: $text
-					transition: all .6s
-					font-size: 16px
-
 					&::after
 						display: none
 
-					&::before
-						content: ''
-						position: absolute
-						top: auto
-						bottom: 0
-						width: 0
-						transition: all .6s
-						width: 100%
-						height: 1px
-						background-color: $text
-						z-index: -1
-						transform: translate(-50%,0) scale(0)
+			&_page
+				display: block !important
 
-					&:hover,
-					&:focus
+				li
+					a
+						position: relative
+						z-index: 1
 						color: $text
-						text-decoration: none
+						transition: all .6s
+						font-size: 16px
+
+						&::after
+							display: none
+
 						&::before
-							transform: translate(-50%,0) scale(1)
+							content: ''
+							position: absolute
+							top: auto
+							bottom: 0
+							width: 0
+							transition: all .6s
+							width: 100%
+							height: 1px
+							background-color: $text
+							z-index: -1
+							transform: translate(-50%,0) scale(0)
 
-
+						&:hover,
+						&:focus
+							color: $text
+							text-decoration: none
+							&::before
+								transform: translate(-50%,0) scale(1)
 
 	.main
 		padding-top: 80px
@@ -331,8 +386,62 @@
 		&__soc
 			margin-right: 0
 
+	.navigation__info_login
+		a
+			&:focus,
+			&:hover
+				color: #fff
+		
+		.active
+			color: #fff !important
+	
+	.cabinet__form
+		max-width: 80%
+
 
 @media only screen and (max-width : 767px)
+	table.shop_table_responsive tr td
+		display: block
+		text-align: center
+
+	tr
+		position: relative
+
+	.wbu-quantity
+		margin: 0 auto
+
+	.order__basket_img,
+	.order__basket_img img
+		width: 50%
+
+	.order__basket td,
+	.order__basket th
+		padding: 5px !important
+
+	.order__basket .coupon
+		flex-wrap: wrap
+		justify-content: center
+
+		.btn
+			margin-top: 15px
+
+	.order__basket_total
+		tr:last-child td
+			padding: 5px
+		
+
+	.header__logo
+		width: 130px
+
+	.header__info img
+		width: 15px
+
+	.header__soc img
+		width: 25px
+
+	.nav
+		top: 58px
+
 	.order__basket
 		&_item
 			flex-direction: column
@@ -431,7 +540,7 @@
 			margin-top: 15px
 
 		&__item
-			padding: 15px 10px
+			padding: 15px 10px 25px
 			margin-bottom: 20px
 
 			&::before,
@@ -454,11 +563,53 @@
 				&--old
 					margin-right: 5px
 
+			&_action
+				flex-wrap: wrap
+
+				span
+					margin-bottom: 5px
+
+			.added_to_cart
+				white-space: nowrap
+				width: 100% !important
+				height: auto !important
+				text-align: center
+
 	.footer p
 		font-size: 16px
 
 
 @media only screen and (max-width : 576px)
+
+	.woocommerce-pagination,
+	.pagination
+
+		a, span
+			height: 35px
+			width: 35px
+			line-height: 35px
+			font-size: 18px
+
+	.product p
+		font-size: 14px
+
+	.yith-wcqv-button,
+	.wbu-btn-inc,
+	.wbu-btn-sub,
+	.add_to_cart_button,
+	.shop__item_form .cart a,
+	.shop__item_form .cart input
+		width: 35px
+		height: 35px
+
+	.yith-wcqv-button,
+	.add_to_cart_button
+		background-size: 60%
+
+	.wbu-btn-inc,
+	.wbu-btn-sub
+		font-size: 26px
+		line-height: 35px
 	
 	.hero__item
 		min-height: 450px
@@ -487,8 +638,8 @@
 		&__logo
 			width: 120px
 
-		&__info img
-			width: 20px
+		&__info
+			display: none
 
 	.main
 		padding-top: 65px
@@ -506,6 +657,33 @@
 
 
 @media only screen and (max-width : 480px)
+	.class
+		padding: 30px 15px
+
+		.form-row
+			flex-wrap: wrap
+			justify-content: center
+
+		input
+			font-size: 18px
+
+			&:placeholder
+				font-size: 18px
+
+		.lost_password
+			text-align: center
+
+	.product
+		flex-wrap: wrap
+
+		.wrap
+			flex-wrap: wrap
+			margin-top: 10px
+			margin-bottom: 10px
+
+		h2
+			margin-bottom: 15px
+
 	.order
 		&__registration
 			&_text
@@ -527,7 +705,6 @@
 					flex-wrap: wrap
 
 			.button
-				width: 100%
 				margin-bottom: 15px
 
 		&__basket_total
@@ -660,6 +837,9 @@
 
 		&__soc
 			display: flex
+	
+	.cabinet__form
+		max-width: 100%
 
 @media only screen and (max-width : 400px)
 

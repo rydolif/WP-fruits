@@ -5,7 +5,7 @@
 	if ( ! function_exists( 'cart_link' ) ) {
 	 function cart_link() {
 	 ?>
-	<a class="cart-contents" href="<?php echo get_home_url(); ?>/cart/" title="<?php _e( 'Перейти в корзину' ); ?>">
+	<a class="cart-contents" href="<?php echo get_home_url(); ?>/cart/">
 		<span class="navigation__info_cart">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/basket.png" alt="">
 			<span class="count">
@@ -26,7 +26,7 @@
 	function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	 ob_start();
 	 ?>
-	 <a class="cart-contents" href="<?php echo get_home_url(); ?>/cart/" title="<?php _e( 'Перейти в корзину' ); ?>">
+	 <a class="cart-contents" href="<?php echo get_home_url(); ?>/cart/">
 	 	<span class="navigation__info_cart">
 	 		<img src="<?php echo get_template_directory_uri(); ?>/assets/img/basket.png" alt="">
 	 		<span class="count">
