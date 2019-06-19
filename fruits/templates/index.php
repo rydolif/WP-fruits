@@ -56,23 +56,18 @@ get_header();
 			</div>
 			<div class="hero__pagination swiper-pagination"></div>
 		</section>
-<!-- 
-		<section class="section-btn--top section-btn">
+ 
+		<section class="section-btn--top section-btn filter">
 			<div class="section-btn__container container">
-				<a href="#" class="btn">Рекомендуем</a>
-				<a href="#" class="btn">Популярное</a>
+				<a href="#recommend" class="btn">Рекомендуем</a>
+				<a href="#popular" class="btn">Популярное</a>
 			</div>
-		</section> -->
-
- 		<section class="shop" id="app">
+		</section>
+		
+		<section id="recommend" class="shop filter__wrap">
 			<div class="container">
 
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-					<?php the_content(); ?>
-					
-				<?php endwhile; ?>
-				<?php endif; ?>
+				<?php echo do_shortcode( '[product_attribute attribute="filtr" filter="rekomenduem" per_page="8"]' ); ?>
 
 				<div class="shop__btn">
 					<a href="<?php echo get_home_url(); ?>/shop/" class="btn btn--shop btn--packing">Больше</a>
@@ -80,6 +75,18 @@ get_header();
 
 			</div>
 		</section> 
+
+		<section id="popular" class="shop filter__wrap">
+			<div class="container">
+
+				<?php echo do_shortcode( '[product_attribute attribute="filtr" filter="populjarnoe" per_page="8"]' ); ?>
+
+				<div class="shop__btn">
+					<a href="<?php echo get_home_url(); ?>/shop/" class="btn btn--shop btn--packing">Больше</a>
+				</div>
+
+			</div>
+		</section>
 				
 		<section class="section-btn--bottom section-btn tabs">
 			<div class="section-btn__container container">

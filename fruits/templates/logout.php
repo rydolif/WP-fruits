@@ -7,27 +7,21 @@ get_header();
 
 ?>
 
-	<main class="main">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main page">
 
-		<section class="order">
 			<div class="container">
+				<section class="error-404 not-found">
+					<header class="page-header">
+						<h1 class="page-title"><?php esc_html_e( 'К сожалению! Эта страница не может быть найдена.', 'schoolstudy' ); ?></h1>
+						<a href="<?php echo get_home_url(); ?>" class="button--index">Вернутся на главную</a>
+					</header><!-- .page-header -->
 
-				<h2><?php the_title(); ?></h2>
-
-
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					<?php the_content(); ?>
-				<?php endwhile; ?>
-				<?php endif; ?>
-
-				<a href="<?php echo get_home_url(); ?>">Главная</a>
-
+				</section><!-- .error-404 -->
 
 			</div>
-		</section>
-
-	</main>
-
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 <?php
 get_footer();

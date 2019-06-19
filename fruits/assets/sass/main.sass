@@ -810,6 +810,7 @@
 		font-family: $fonts
 		margin-bottom: 20px
 
+
 	&__block
 		position: relative
 		padding: 30px 110px 30px 80px
@@ -848,6 +849,7 @@
 		&_header
 			font-weight: 600
 			transition: all .3s
+			font-size: 18px
 
 			span
 				position: absolute
@@ -870,7 +872,6 @@
 			
 
 		&_content
-			color: #82ba01
 			margin-top: 30px
 			text-align: right
 			padding-left: 100px
@@ -1104,11 +1105,36 @@
 	fieldset
 		margin-top: 40px
 
+	p
+		font-size: 18px
+		margin-bottom: 10px
+
+		em
+			font-size: 13px
+
+	a
+		color: $green
+		@extend .link
+
+		&::before
+			background-color: $green
+
+		&:hover,
+		&:focus
+			color: $green
+
+	&__nav
+		margin-bottom: 30px
+
+		ul
+			flex-wrap: wrap
+
 	
 	&__container
 		border: 1px solid #ebebeb
 		box-shadow: 10px 10px 10px 0 rgba(0,0,0, .2)
 		margin-bottom: 15px
+		padding: 0 30px 30px
 
 	&__form
 		max-width: 50%
@@ -1555,8 +1581,8 @@ del
 	height: 45px
 	width: 45px
 	border: 2px solid #ebebeb
-	font-size: 36px
-	line-height: 45px
+	font-size: 40px
+	line-height: 40px
 	color: #676767
 	font-family: $title
 	text-align: center
@@ -2027,7 +2053,7 @@ del
 	input
 		height: 55px
 		line-height: 55px
-		color: #ccc
+		color: $text
 		font-size: 24px
 		padding: 0 20px
 		border: 5px solid transparent
@@ -2039,7 +2065,7 @@ del
 
 		&::placeholder
 			line-height: 55px
-			color: #ccc
+			color: $text
 			font-size: 24px
 	
 	&__btn
@@ -2111,6 +2137,57 @@ del
 		display: flex
 		justify-content: space-between
 		align-items: center
+
+
+.woocommerce-MyAccount-content
+	text-align: center
+
+	mark
+		background: $green
+		color: #fff
+		padding: 2px
+		border-radius: 3px
+
+	address,
+	header
+		font-size: 18px
+
+	header
+		h3
+			margin-bottom: 5px
+
+	label
+		display: none
+
+.woocommerce-orders-table
+	width: 100%
+
+	tr
+		border-bottom: 1px solid #ebebeb
+
+	td, th
+		padding: 20px 10px
+
+.woocommerce-table--order-details 
+	margin: 0 auto
+
+.woocommerce-customer-details
+	text-align: center
+
+	table
+		margin: 0 auto
+
+
+.woocommerce-MyAccount-navigation-link--dashboard
+	display: none
+
+
+.size-post-thumbnail
+	width: 40%
+	height: auto
+
+
+
 
 @import "page"
 @import "media" // Always at the end

@@ -14,8 +14,7 @@ $(function() {
       }
   });
 
-
-//---------------------------js-----------------------
+//---------------------------tabs-----------------------
   $('.tabs__wrap').hide();
   $('.tabs__wrap:first').show();
   $('.tabs div a:first').addClass('active');
@@ -26,6 +25,19 @@ $(function() {
     $('.tabs__wrap').hide();
      var selectTab = $(this).attr('href');
     $(selectTab).fadeIn();
+  });
+
+//---------------------------filter-----------------------
+  $('.filter__wrap').hide();
+  $('.filter__wrap:first').show();
+  $('.filter div a:first').addClass('btn--active');
+   $('.filter div a').click(function(event){
+    event.preventDefault();
+    $('.filter div a').removeClass('btn--active');
+    $(this).addClass('btn--active');
+    $('.filter__wrap').hide();
+     var selectFilter = $(this).attr('href');
+    $(selectFilter).fadeIn();
   });
 
 //------------------------------acardeon---------------------------
@@ -96,6 +108,11 @@ $(function() {
       }
   });
 
+  if($(this).scrollTop()>10){
+      $('.header').addClass('header--active');
+      $('.navigation').addClass('navigation--active');
+  }
+  
 //-------------------------скорость якоря---------------------------------------
   $(".header__list").on("click","a", function (event) {
       event.preventDefault();
