@@ -1129,6 +1129,18 @@
 		ul
 			flex-wrap: wrap
 
+		a
+			@extend .button--index
+			width: 100%
+			padding: 0 10px
+
+			&::before
+				display: none
+
+			&:hover,
+			&:focus
+				color: #fff
+
 	
 	&__container
 		border: 1px solid #ebebeb
@@ -1142,8 +1154,13 @@
 		padding: 35px 15px 55px
 
 		input
-			padding: 0 20px
+			padding: 0 15px
 			background: #e4f0c7
+			font-size: 16px
+
+
+			&::placeholder
+				font-size: 16px
 
 		&_line
 			margin: 30px 0
@@ -1185,6 +1202,7 @@
 
 .order
 	padding-top: 30px
+	position: relative
 
 	h2, h3
 		font-family: $fonts
@@ -1617,6 +1635,26 @@ del
 		&:hover,
 		&:focus
 			text-decoration: underline
+			color: $red !important
+
+.cabinet__container
+	.woocommerce-pagination
+		padding-top: 30px
+
+		a
+			border: none
+			line-height: 1
+			height: auto
+			width: auto
+
+			&:hover,
+			&:focus
+				background: none
+				color: $green
+				line-height: 1
+				height: auto
+				width: auto
+
 
 .wc-proceed-to-checkout
 	display: flex
@@ -1691,7 +1729,7 @@ del
 		@extend .btn
 		color: $orange
 		width: 270px
-		height: 65px
+		height: 62px
 		background-image: none
 		border: 5px solid transparent
 		border-image: url(../img/btn--packing--active.png)
@@ -1704,7 +1742,7 @@ del
 		&:focus
 			border: 5px solid transparent
 			border-image: url(../img/btn--packing.png)
-			border-image-slice: 33
+			border-image-slice: 32
 			border-image-repeat: round
 			border-image-width: 33px
 
@@ -2187,6 +2225,25 @@ del
 	height: auto
 
 
+.woocommerce-table__product-name
+	a
+		color: $green
+
+		&:hover,
+		&:focus
+			color: $green
+
+
+.wccs_custom_fields
+	td
+		display: none
+
+.payment_method_cod
+	display: none
+
+.woocommerce-ResetPassword
+	.woocommerce-form-row
+		text-align: center
 
 
 @import "page"

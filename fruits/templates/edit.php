@@ -7,7 +7,41 @@ get_header();
 
 ?>
 
-	<main class="main">
+<main class="main">
+
+	<section class="cabinet">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+
+					<?php
+					while ( have_posts() ) :
+						the_post();
+						?>
+
+						<div id="post-<?php the_ID(); ?>">
+
+							<div class="cabinet__container entry-content">
+								<?php
+									the_content();
+								?>
+							</div><!-- .entry-content -->
+
+						</div><!-- #post-<?php the_ID(); ?> -->
+
+					<?php
+						endwhile; // End of the loop.
+					?>
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+</main>
+
+<!-- 	<main class="main">
 
 		<section class="cabinet">
 			<div class="container">
@@ -72,7 +106,7 @@ get_header();
 
 	</main>
 
-
+ -->
 
 <?php
 get_footer();

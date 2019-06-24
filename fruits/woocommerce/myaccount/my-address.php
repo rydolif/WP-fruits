@@ -37,7 +37,7 @@ $col    = 1;
 ?>
 
 <p>
-	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', __( 'The following addresses will be used on the checkout page by default.', 'woocommerce' ) ); ?>
+	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', __( 'Следующий адрес будет использован при оформлении заказов по-умолчанию.', 'woocommerce' ) ); ?>
 </p>
 
 <?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
@@ -46,9 +46,9 @@ $col    = 1;
 
 <?php foreach ( $get_addresses as $name => $title ) : ?>
 
-	<div class="u-column<?php echo ( ( $col = $col * -1 ) < 0 ) ? 1 : 2; ?> col-<?php echo ( ( $oldcol = $oldcol * -1 ) < 0 ) ? 1 : 2; ?> woocommerce-Address">
+	<div class="u-column woocommerce-Address">
 		<header class="woocommerce-Address-title title">
-			<h3><?php echo $title; ?></h3>
+			<h3>Адрес доставки</h3>
 			<a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit"><?php _e( 'Edit', 'woocommerce' ); ?></a>
 		</header>
 		<address><?php

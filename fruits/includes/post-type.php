@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         $args = array(
             'label'                 => __( 'Акции', 'text_domain' ),
             'labels'                => $labels,
-            'supports'              => array( 'title'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+            'supports'              => array( 'title','editor','thumbnail'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
             'hierarchical'          => false,
             'public'                => true,
             'show_ui'               => true,

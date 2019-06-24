@@ -18,7 +18,8 @@ get_header();
 					<div class="class">
 
 						<h2><?php the_title(); ?></h2>
-						
+
+					
 						<?php do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 							<form class="woocommerce-form woocommerce-form-login login" method="post">
@@ -43,7 +44,7 @@ get_header();
 									<button type="submit" class="btn woocommerce-button button woocommerce-form-login__submit" name="login" value="<?php esc_attr_e( 'Log in', 'woocommerce' ); ?>"><?php esc_html_e( 'Log in', 'woocommerce' ); ?></button>
 								</p>
 								<p class="woocommerce-LostPassword lost_password">
-									<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'woocommerce' ); ?></a>
+									<a href="http://fruitymall.ru/smena-parolja/"><?php esc_html_e( 'Lost your password?', 'woocommerce' ); ?></a>
 								</p>
 
 								<?php do_action( 'woocommerce_login_form_end' ); ?>

@@ -20,8 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $text_align = is_rtl() ? 'right' : 'left';
-
-do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email ); ?>
+?>
 
 <h2>
 	<?php
@@ -86,4 +85,4 @@ do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plai
 	</table>
 </div>
 
-<?php do_action( 'woocommerce_email_after_order_table', $order, $sent_to_admin, $plain_text, $email ); ?>
+
